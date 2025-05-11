@@ -19,4 +19,20 @@ pip install -r requirements.txt
 python app.py
 ```
 
-#### Click the  http://127.0.0.1:5000/qr
+#### Click the  http://127.0.0.1:5000
+
+### TODO
+
+## TODO
+
+- [x] Basic QR Code Generator
+- [ ] Make the input and display center
+- [ ] Make QR Code Download
+- [ ] Check for invalid inputs (Example:if not having http dont generate qr code)
+- [ ] Make qr page background colours
+- [ ] Host on Github
+
+
+
+
+
