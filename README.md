@@ -2,6 +2,8 @@
 
 ![GitHub Logo](/static/qr.png)
 
+### Check the Live Project here
+https://qrcodegenerator-w9du.onrender.com
 ## How to run Project
 
 ### Clone the Repository
