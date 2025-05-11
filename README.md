@@ -1,5 +1,7 @@
 # QR Code Generator
 
+![GitHub Logo](/static/qr.png)
+
 ## How to run Project
 
 ### Clone the Repository
