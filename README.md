@@ -11,3 +11,10 @@ git clone https://github.com/Uva-nana/qrcodegenerator.git
 ```bash
 pip install -r requirements.txt
 ```
+
+### Run the app.py
+```bash
+python app.py
+```
+
+### Click the  http://127.0.0.1:5000/qr
