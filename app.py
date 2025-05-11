@@ -4,7 +4,7 @@ import os #inbuilt libraries
 
 app = Flask(__name__)
 
-@app.route('/qr', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def showqr():
     if request.method == 'POST':
         url = request.form['url']
