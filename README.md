@@ -32,7 +32,7 @@ python app.py
 - [ ] Make QR Code Download
 - [ ] Check for invalid inputs (Example:if not having http dont generate qr code)
 - [ ] Make qr page background colours
-- [ ] Host on Github
+- [x] Deploy the Project on Github
 
 
 
