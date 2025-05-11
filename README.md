@@ -26,7 +26,7 @@ python app.py
 ## TODO
 
 - [x] Basic QR Code Generator
-- [ ] Make the input and display center
+- [x] Make the input and display center
 - [ ] Make QR Code Download
 - [ ] Check for invalid inputs (Example:if not having http dont generate qr code)
 - [ ] Make qr page background colours
