@@ -9,6 +9,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
@@ -24,6 +25,10 @@
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 8px;
+        }
+        .checkbox-container {
+            margin-bottom: 15px;
+            font-size: 14px;
         }
         button {
             padding: 10px 20px;
@@ -45,4 +50,24 @@
 </head>
 <body>
     <div class="container">
-        <h1>Enter URL to generate QR
+        <h1>Enter URL to Generate QR Code</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter URL here" required><br>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="accept" name="accept" required>
+                <label for="accept">I confirm the URL is correct and publicly accessible</label>
+            </div>
+
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+</html>
