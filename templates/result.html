@@ -4,21 +4,21 @@
     <title>QR Code Result</title>
     <style>
         body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
         }
 
         .container {
-            text-align: center;
             background: white;
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
         }
 
         img {
@@ -29,8 +29,16 @@
         button {
             padding: 10px 20px;
             font-size: 16px;
-            margin-top: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 6px;
+            background-color: #a6c1ee;
+            color: white;
             cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #8eaeea;
         }
 
         a {
@@ -41,18 +49,11 @@
 <body>
     <div class="container">
         <h1>QR Code for: {{ url }}</h1>
-
-        <!-- Display QR Code -->
         <img src="/{{ image_path }}" alt="QR Code">
-        <br><br>
-
-        <!-- Download Button -->
+        <br>
         <a href="/{{ image_path }}" download="my_qr_code.png">
             <button>Download QR Code</button>
         </a>
-        <br><br>
-
-        <!-- Link to Home -->
         <a href="/">
             <button>Generate Another</button>
         </a>
