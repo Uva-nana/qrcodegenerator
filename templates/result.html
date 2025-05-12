@@ -4,28 +4,31 @@
     <title>QR Code Result</title>
     <style>
         body {
-            background-color: #eaf6f6;
+            background: linear-gradient(to left, #ff512f, #dd2476);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            background-color: #ffffffdd;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.25);
             text-align: center;
         }
         img {
             margin: 20px 0;
+            width: 200px;
+            height: 200px;
         }
         a {
             display: inline-block;
-            margin-top: 15px;
-            color: #0077cc;
+            margin-top: 12px;
+            color: #333;
             text-decoration: none;
+            font-weight: bold;
         }
         a:hover {
             text-decoration: underline;
@@ -33,6 +36,7 @@
         .download {
             display: block;
             margin-top: 10px;
+            color: #0077cc;
         }
     </style>
 </head>
@@ -41,8 +45,8 @@
         <h1>QR Code for:</h1>
         <p>{{ url }}</p>
         <img src="/{{ image_path }}" alt="QR Code">
-        <a class="download" href="/{{ image_path }}" download="qrcode.png">Download QR Code</a>
-        <a href="/">Generate Another</a>
+        <a class="download" href="/{{ image_path }}" download="qrcode.png">⬇️ Download QR Code</a>
+        <a href="/">↩️ Generate Another</a>
     </div>
 </body>
 </html>
