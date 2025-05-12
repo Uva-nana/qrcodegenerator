@@ -30,7 +30,7 @@ python app.py
 - [x] Make the input and display center
 - [x] Make QR Code Download
 - [ ] Check for invalid inputs (Example:if not having http dont generate qr code)
-- [ ] Make qr page background colours
+- [x] Make qr page background colours
 - [x] Deploy the Project on Github
 
 
