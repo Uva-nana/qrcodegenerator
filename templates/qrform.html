@@ -54,7 +54,7 @@
     <div class="container">
         <h1>Enter URL to generate QR Code</h1>
 
-        <!-- Display Error if exists -->
+        <!-- Flash error message -->
         {% with messages = get_flashed_messages() %}
           {% if messages %}
             <div class="error">
@@ -63,7 +63,6 @@
           {% endif %}
         {% endwith %}
 
-        <!-- Form -->
         <form method="POST">
             <input type="text" name="url" placeholder="Enter URL here" required>
             <button type="submit">Generate</button>
