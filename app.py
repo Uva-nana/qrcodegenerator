@@ -6,34 +6,41 @@ import re
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Needed for flash messages
 
+# Function to validate URL with strict checks
 def is_valid_url(url):
-    # Must start with http:// or https://
-    if not url.startswith(('http://', 'https://')):
-        return False
+    # Check if the URL starts with http:// or https://
+    if not url.lower().startswith(('http://', 'https://')):
+        return "❌ HTTP/HTTPS missing! Please include http:// or https:// at the beginning."
 
     # Disallow localhost or private IPs
     blocked_keywords = ['localhost', '127.', '192.168.', '10.', '::1']
     if any(block in url for block in blocked_keywords):
-        return False
+        return "❌ Localhost or private IPs are not allowed."
 
-    # Very basic pattern for valid domain URLs
+    # Ensure the URL is a valid domain or IP
     pattern = re.compile(
-        r'^https?://'                         # http:// or https://
-        r'([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}'     # Domain name like example.com
-        r'(:\d+)?'                            # Optional port
-        r'(/.*)?$'                            # Optional path
+        r'^(https?://)'                         # http:// or https://
+        r'([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}'        # Domain name like example.com
+        r'(:\d+)?'                               # Optional port
+        r'(/.*)?$'                               # Optional path
     )
-    return pattern.match(url)
+    if not bool(pattern.match(url)):
+        return "❌ Invalid URL format!"
+
+    return True  # URL is valid
 
 @app.route('/', methods=['GET', 'POST'])
 def showqr():
     if request.method == 'POST':
         url = request.form['url'].strip()
 
-        if not is_valid_url(url):
-            flash("❌ Invalid URL! Please enter a valid public URL like https://example.com")
+        validation_result = is_valid_url(url)
+        
+        if validation_result != True:
+            flash(validation_result)  # Display the error message
             return render_template('qrform.html')
 
+        # If URL is valid, generate QR Code
         img = qrcode.make(url)
         path = os.path.join('static', 'qr.png')
         img.save(path)
