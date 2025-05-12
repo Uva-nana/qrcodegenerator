@@ -2,11 +2,60 @@
 <html>
 <head>
     <title>QR Code Result</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>QR Code for: {{ url }}</h1>
-    <img src="/{{ image_path }}" alt="QR Code">
-    <br><br>
-    <a href="/">Generate Another</a>
+    <div class="container">
+        <h1>QR Code for: {{ url }}</h1>
+
+        <!-- Display QR Code -->
+        <img src="/{{ image_path }}" alt="QR Code">
+        <br><br>
+
+        <!-- Download Button -->
+        <a href="/{{ image_path }}" download="my_qr_code.png">
+            <button>Download QR Code</button>
+        </a>
+        <br><br>
+
+        <!-- Link to Home -->
+        <a href="/">
+            <button>Generate Another</button>
+        </a>
+    </div>
 </body>
 </html>
