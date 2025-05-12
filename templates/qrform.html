@@ -43,11 +43,27 @@
         button:hover {
             background-color: #4d94ff;
         }
+
+        .error {
+            color: red;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Enter URL to generate QR Code</h1>
+
+        <!-- Display Error if exists -->
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="error">
+              {{ messages[0] }}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Form -->
         <form method="POST">
             <input type="text" name="url" placeholder="Enter URL here" required>
             <button type="submit">Generate</button>
