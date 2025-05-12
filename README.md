@@ -4,6 +4,7 @@
 
 ### Check the Live Project here
 https://qrcodegenerator-w9du.onrender.com
+
 ## How to run Project
 
 ### Clone the Repository
@@ -27,7 +28,7 @@ python app.py
 
 - [x] Basic QR Code Generator
 - [x] Make the input and display center
-- [ ] Make QR Code Download
+- [x] Make QR Code Download
 - [ ] Check for invalid inputs (Example:if not having http dont generate qr code)
 - [ ] Make qr page background colours
 - [x] Deploy the Project on Github
