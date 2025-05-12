@@ -4,59 +4,45 @@
     <title>QR Code Result</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eaf6f6;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
         }
-
         .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
             text-align: center;
         }
-
         img {
-            width: 200px;
-            height: 200px;
+            margin: 20px 0;
         }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            border: none;
-            border-radius: 6px;
-            background-color: #a6c1ee;
-            color: white;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #8eaeea;
-        }
-
         a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #0077cc;
             text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .download {
+            display: block;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>QR Code for: {{ url }}</h1>
+        <h1>QR Code for:</h1>
+        <p>{{ url }}</p>
         <img src="/{{ image_path }}" alt="QR Code">
-        <br>
-        <a href="/{{ image_path }}" download="my_qr_code.png">
-            <button>Download QR Code</button>
-        </a>
-        <a href="/">
-            <button>Generate Another</button>
-        </a>
+        <a class="download" href="/{{ image_path }}" download="qrcode.png">Download QR Code</a>
+        <a href="/">Generate Another</a>
     </div>
 </body>
 </html>
