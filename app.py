@@ -8,9 +8,12 @@ app.secret_key = 'your_secret_key'  # Needed for flash messages
 
 # Function to validate URL with strict checks
 def is_valid_url(url):
+    url = url.strip()
+    print("Checking URL:", url)  # Debugging output
+
     # Check if the URL starts with http:// or https://
     if not url.lower().startswith(('http://', 'https://')):
-        return "❌ HTTP/HTTPS missing! Please include http:// or https:// at the beginning."
+        return "❌ Please include http:// or https:// at the beginning."
 
     # Disallow localhost or private IPs
     blocked_keywords = ['localhost', '127.', '192.168.', '10.', '::1']
@@ -24,7 +27,7 @@ def is_valid_url(url):
         r'(:\d+)?'                               # Optional port
         r'(/.*)?$'                               # Optional path
     )
-    if not bool(pattern.match(url)):
+    if not pattern.match(url):
         return "❌ Invalid URL format!"
 
     return True  # URL is valid
@@ -36,13 +39,10 @@ def showqr():
         validation_result = is_valid_url(url)
 
         if validation_result != True:
-            print("The URL is not valid")
             flash(validation_result)
             return render_template('qrform.html')
-        else:
-            print("The URL is valid")
 
-        # If URL is valid, generate QR Code
+        # Generate QR Code
         img = qrcode.make(url)
         path = os.path.join('static', 'qr.png')
         img.save(path)
