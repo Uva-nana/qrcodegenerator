@@ -1,9 +1,10 @@
+#Flask
 from flask import Flask, request, render_template, flash
 import qrcode
 import os
 import re
 
-app = Flask(__name__)
+app = Flask(__name__) # Iits like telling hey flask create a new web application 
 app.secret_key = 'your_secret_key'  # Needed for flash messages
 
 # Function to validate URL with strict checks
