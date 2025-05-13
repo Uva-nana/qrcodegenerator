@@ -1,4 +1,4 @@
-#Flask
+#Flask is a class , from flask Library we are importing FLask class, 
 from flask import Flask, request, render_template, flash
 import qrcode
 import os
@@ -19,7 +19,7 @@ def is_valid_url(url):
     # Disallow localhost or private IPs
     blocked_keywords = ['localhost', '127.', '192.168.', '10.', '::1']
     if any(block in url for block in blocked_keywords):
-        return "❌ Localhost or private IPs are not allowed."
+        return "❌ Localhost or private IPs are not allowed."   
 
     # Ensure the URL is a valid domain or IP using regex
     pattern = re.compile(
