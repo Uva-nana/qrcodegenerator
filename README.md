@@ -32,7 +32,7 @@ python app.py
 - [x] Check for invalid inputs (Example:if not having http dont generate qr code)
 - [x] Make qr page background colours
 - [x] Deploy the Project on Github
-- [ ] Improve URL Validation
+
 - [x] User select the size of the QR code
 
 
