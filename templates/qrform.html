@@ -19,16 +19,12 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
             text-align: center;
         }
-        input[type="text"] {
+        input[type="text"], select {
             width: 300px;
             padding: 12px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 8px;
-        }
-        .checkbox-container {
-            margin-bottom: 15px;
-            font-size: 14px;
         }
         button {
             padding: 10px 20px;
@@ -43,7 +39,7 @@
             background-color: #2b86c5;
         }
         .flash {
-            color: rgb(211, 48, 48);
+            color: red;
             margin-bottom: 15px;
         }
     </style>
@@ -60,12 +56,14 @@
 
         <form method="POST" novalidate>
             <input type="text" name="url" placeholder="Enter URL here" required><br>
-            <label for = "size">Select QR Code Size</label>
-            <option value="5">Small</option>
-            <option value="10" selected>Medium</option>
-            <option value="15">Large</option>
-            <option value="20">Extra Large</option>
-        </select><br><br>
+
+            <label for="size">Select QR Code Size</label><br>
+            <select name="size" id="size" required>
+                <option value="5">Small</option>
+                <option value="10" selected>Medium</option>
+                <option value="15">Large</option>
+                <option value="20">Extra Large</option>
+            </select><br><br>
 
             <button type="submit">Generate</button>
         </form>
