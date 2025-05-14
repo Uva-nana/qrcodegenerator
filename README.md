@@ -33,7 +33,7 @@ python app.py
 - [x] Make qr page background colours
 - [x] Deploy the Project on Github
 - [ ] Improve URL Validation
-- [ ] User select the size of the QR code
+- [x] User select the size of the QR code
 
 
 
