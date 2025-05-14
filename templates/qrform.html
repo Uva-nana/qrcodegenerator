@@ -46,6 +46,7 @@
 </head>
 <body>
     <div class="container">
+        <img src="{{ url_for('static', filename='qricon.png') }}" alt="QR Icon" style="width: 80px; margin-bottom: 20px;">
         <h1>Enter URL to Generate QR Code</h1>
 
         {% with messages = get_flashed_messages() %}
