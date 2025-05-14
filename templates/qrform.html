@@ -13,7 +13,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
-            background-color: #ffffffcc;
+            background-color: white;
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
@@ -43,7 +43,7 @@
             background-color: #2b86c5;
         }
         .flash {
-            color: red;
+            color: rgb(211, 48, 48);
             margin-bottom: 15px;
         }
     </style>
@@ -60,11 +60,6 @@
 
         <form method="POST" novalidate>
             <input type="text" name="url" placeholder="Enter URL here" required><br>
-
-            <div class="checkbox-container">
-                <input type="checkbox" id="accept" name="accept" required>
-                <label for="accept">I confirm the URL is correct and publicly accessible</label>
-            </div>
 
             <button type="submit">Generate</button>
         </form>
